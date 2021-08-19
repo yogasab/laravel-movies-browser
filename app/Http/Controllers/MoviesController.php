@@ -19,7 +19,7 @@ class MoviesController extends Controller
         $genres = collect($genresMovies)->mapWithKeys(function ($genre) {
             return [$genre['id'] => $genre['name']];
         });
-        dump($nowPlayingMovies);
+        // dump($nowPlayingMovies);
         // dump($popularMovies);
         $data = [
             'popularMovies' => $popularMovies,
@@ -36,7 +36,7 @@ class MoviesController extends Controller
         $data = [
             'detailsMovie' => $detailsMovie
         ];
-        dump($detailsMovie);
+        // dump($detailsMovie);
         return view('movies.show', $data);
     }
 }
