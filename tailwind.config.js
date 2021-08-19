@@ -17,8 +17,10 @@ module.exports = {
         }),
     },
     variants: {
-        extend: {},
+        // all the following default to ['responsive']
+        spinner: ["responsive"],
     },
+
     plugins: [
         require("tailwindcss-spinner")({
             className: "spinner",

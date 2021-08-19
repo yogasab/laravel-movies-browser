@@ -1,7 +1,15 @@
-<div class="relative mt-3 md:mt-0">
-    <input wire:model.debounce.400ms="keyword" type="text" name="search" id="search" class="bg-gray-800 rounded-full w-64 px-4 pl-8 py-1 focus:outline-none focus:shadow-outline" placeholder="Search ...">
+<div class="relative mt-3 md:mt-0" x-data="{ isOpen: true }" @click.away="isOpen = false">
+    <input 
+      wire:model.debounce.400ms="keyword" 
+      type="text" 
+      name="search" 
+      id="search" 
+      class="bg-gray-800 rounded-full w-64 px-4 pl-8 py-1 focus:outline-none focus:shadow-outline" placeholder="Search ..."
+      @focus="isOpen = true"
+      @keydown.shift.tab = "isOpen = false"
+      @keydown.escape.window="isOpen = false">
     @if (strlen($keyword) > 3)
-      <div class="absolute bg-gray-800 rounded w-64 mt-4">
+      <div class="z-50 absolute bg-gray-800 rounded w-64 mt-4" x-show="isOpen">
         @if ($keywordResults->count())
           <ul>
             @foreach ($keywordResults as $result)
