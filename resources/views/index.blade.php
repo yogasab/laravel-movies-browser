@@ -9,7 +9,7 @@
 				@for ($i = 0; $i < 8; $i++)
 					<div class="mt-8">
 						<a href="#">
-							<img src="/img/parasite.jpg" alt="Parasite" class="hover:opacity-75 transition ease-in-out">
+							<img src="/img/parasite.jpg" alt="Parasite" class="shadow rounded hover:opacity-75 transition ease-in-out">
 						</a>
 						<div class="mt-2">
 							<a href="" class="text-lg mt-2 hover:text-gray-300">Parasite</a>
@@ -38,7 +38,7 @@
 				@for ($i = 0; $i < 8; $i++)
 					<div class="mt-8">
 						<a href="#">
-							<img src="/img/parasite.jpg" alt="Parasite" class="hover:opacity-75 transition ease-in-out">
+							<img src="/img/parasite.jpg" alt="Parasite" class="shadow rounded hover:opacity-75 transition ease-in-out">
 						</a>
 						<div class="mt-2">
 							<a href="" class="text-lg mt-2 hover:text-gray-300">Parasite</a>
