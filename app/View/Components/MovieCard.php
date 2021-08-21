@@ -12,12 +12,12 @@ class MovieCard extends Component
      * @return void
      */
     public $movies;
-    public $genres;
+    // public $genres;
 
-    public function __construct($movies, $genres)
+    public function __construct($movies)
     {
         $this->movies = $movies;
-        $this->genres = $genres;
+        // $this->genres = $genres;
     }
 
     /**

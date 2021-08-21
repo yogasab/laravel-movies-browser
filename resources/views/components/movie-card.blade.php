@@ -12,7 +12,7 @@
             <span class="mx-2">|</span>
             <span>{{ $movies['release_date']}}</span>
         </div>
-        <div class="text-gray-400">
+        <div class="text-gray-400 truncate">
             {{$movies['genres']}}
         </div>
     </div>
