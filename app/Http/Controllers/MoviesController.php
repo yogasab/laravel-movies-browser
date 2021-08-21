@@ -36,7 +36,7 @@ class MoviesController extends Controller
         $data = [
             'detailsMovie' => $detailsMovie
         ];
-        // dump($detailsMovie);
+        dump($detailsMovie);
         return view('movies.show', $data);
     }
 }
