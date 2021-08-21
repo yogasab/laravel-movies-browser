@@ -88,7 +88,7 @@
         <h2 class="text-4xl text-yellow-400 font-semibold">Cast</h2>
         <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8">
           @foreach ($detailsMovie['credits']['cast'] as $cast)
-            @if ($loop->index < 10)
+            @if ($loop->index < 5)
               <div class="mt-8">
                 <a href="#" class="mb-0">
                   <img src="https://image.tmdb.org/t/p/w300/{{ $cast['profile_path'] }}" alt="Parasite" class="shadow rounded hover:opacity-75 transition ease-in-out">
