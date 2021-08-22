@@ -25,7 +25,7 @@ class MoviesController extends Controller
             $genres,
             $title
         );
-        return view('index', $viewModel);
+        return view('movies.index', $viewModel);
     }
 
     public function show($id)
