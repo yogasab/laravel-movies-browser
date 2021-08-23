@@ -18,10 +18,10 @@
                 </a>
               </li>
               <li class="ml-5">
-                <a href="" class="hover:text-gray-300"><strong>Movies</strong></a>
+                <a href="{{ route('movies') }}" class="hover:text-gray-300"><strong>Movies</strong></a>
               </li>
               <li class="ml-5">
-                <a href="" class="hover:text-gray-300"><strong>TV Shows</strong></a>
+                <a href="{{ route('tvshow') }}" class="hover:text-gray-300"><strong>TV Shows</strong></a>
               </li>
               <li class="ml-5">
                 <a href="{{ route('actors') }}" class="hover:text-gray-300"><strong>Actors</strong></a>

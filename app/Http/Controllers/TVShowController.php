@@ -2,7 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\ViewModels\TVShowDetailsViewModel;
+use App\ViewModels\TVShowViewModel;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Http;
 
 class TVShowController extends Controller
 {
@@ -13,7 +16,20 @@ class TVShowController extends Controller
      */
     public function index()
     {
-        return view('tvshow.index');
+        $airingTodayTVShow = Http::withToken(config('services.tmdb.token'))
+            ->get('https://api.themoviedb.org/3/tv/on_the_air')->json()['results'];
+        $popularTVShow = Http::withToken(config('services.tmdb.token'))
+            ->get('https://api.themoviedb.org/3/tv/popular')->json()['results'];
+        $genres = Http::withToken(config('services.tmdb.token'))
+            ->get('https://api.themoviedb.org/3/genre/tv/list')->json()['genres'];
+        $title = 'TV Shows';
+        $viewModel = new TVShowViewModel(
+            $airingTodayTVShow,
+            $popularTVShow,
+            $genres,
+            $title
+        );
+        return view('tvshow.index', $viewModel);
     }
 
     /**
@@ -45,7 +61,12 @@ class TVShowController extends Controller
      */
     public function show($id)
     {
-        //
+        $detailsTVShow = Http::withToken(config('services.tmdb.token'))
+            ->get('https://api.themoviedb.org/3/tv/' . $id . '?append_to_response=credits,videos,images')->json();
+        $title = $detailsTVShow['name'];
+        // dump($detailsTVShow);
+        $viewModel = new TVShowDetailsViewModel($detailsTVShow, $title);
+        return view('tvshow.show', $viewModel);
     }
 
     /**

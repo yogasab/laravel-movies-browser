@@ -23,7 +23,7 @@ class ActorsViewModel extends ViewModel
                 'profile_path' => $actor['profile_path'] ? 'https://image.tmdb.org/t/p/original' . $actor['profile_path'] : 'https://ui-avatars.com/api/?size=235&name=' . $actor['name'],
                 'known_for' => collect($actor['known_for'])->where('media_type', 'movie')->pluck('title')->union(collect($actor['known_for'])->where('media_type', 'tv')->pluck('name'))->implode(', ')
             ]);
-        })->dump();
+        });
     }
     public function title()
     {

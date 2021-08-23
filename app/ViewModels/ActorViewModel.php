@@ -54,9 +54,9 @@ class ActorViewModel extends ViewModel
             return collect($movie)->merge([
                 'poster_path' => $movie['poster_path'] ? 'https://image.tmdb.org/t/p/w185' . $movie['poster_path'] : 'https://via.placeholder.com/185x278',
                 'title' => $title,
-                // 'link_to_page'=> $movie['media_type'] === 'movie' ? route()
-            ])->only(['poster_path', 'title', 'media_type', 'id']);
-        });
+                'link_to_page' => $movie['media_type'] === 'movie' ? route('movies.show', $movie['id']) : route('tvshow.show', $movie['id'])
+            ])->only(['poster_path', 'title', 'media_type', 'id', 'link_to_page']);
+        })->dump();
     }
 
     public function credits()
