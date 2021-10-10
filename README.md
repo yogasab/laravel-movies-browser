@@ -17,3 +17,6 @@ https://developers.themoviedb.org/3
 ![image](https://user-images.githubusercontent.com/68288783/133920266-05c39596-3bb1-411d-a4a4-a7192163f9ed.png)
 # Actors (Actor Details)
 ![image](https://user-images.githubusercontent.com/68288783/133920291-818d1138-d34c-49bc-8597-3086ca573207.png)
+
+# Demo Link
+http://laravel-movie-browser.herokuapp.com/
